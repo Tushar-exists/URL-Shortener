@@ -87,7 +87,7 @@ Tushar Kumar Bhushan
 * **GitHub:** [Tushar-exists](https://github.com/Tushar-exists)
 * **LinkedIn:** [Tushar Kumar Bhushan](https://www.linkedin.com/in/tushar-kumar-bhushan-bb5381244/)
 * **Portfolio:** [https://tushar-kb-portfolio.vercel.app/](https://tushar-kb-portfolio.vercel.app/)
-* **Email:** [tushar.works09.com](mailto:tushar.works09.com) <!-- Replace with your actual email address -->
+* **Email:** [tushar.kr.bh.com](mailto:tushar.kr.bh.com) <!-- Replace with your actual email address -->
 
 
 
