@@ -1,6 +1,6 @@
 # 🚀 LinkSwift — The Only URL Shortener You'll Ever Need!
 
-[🌐 Live Demo](https://linkswift.vercel.app/) • [👨‍💻 Portfolio](https://tushar-kb-portfolio.vercel.app/)
+[🌐 Live Demo](https://link-swift.vercel.app/) • [👨‍💻 Portfolio](https://tushar-kb-portfolio.vercel.app/)
 
 ---
 
