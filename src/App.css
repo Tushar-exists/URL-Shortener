@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Geist fonts for ALL components/site text */
+@import url('https://api.fontshare.com/v2/css?f[]=geist@100,200,300,400,500,600,700,800,900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=geist-mono@100,200,300,400,500,600,700,800,900&display=swap');
+
+/* Portfolio theme variables */
+:root {
+  --font-geist-sans: 'Geist', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+}
+
+/* Portfolio typography & controls */
+@layer base {
+  html, body {
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    @apply bg-background text-foreground;
+    transition: background 0.6s cubic-bezier(0.4,0,0.2,1), color 0.6s cubic-bezier(0.4,0,0.2,1);
+    font-feature-settings: 'ss01' on, 'cv11' on;
+    font-variation-settings: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  *, ::before, ::after {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+}
+
+.card, .bg-card {
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--card-foreground);
+  box-shadow: 0 4px 24px 0 oklch(0.90 0 0 / 0.05);
+}
+
+input, .input, .bg-input {
+  font-family: var(--font-geist-sans), sans-serif;
+  background: var(--input, white);
+  color: var(--foreground, #232323);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  outline: none;
+}
+input:focus, .input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--ring);
+}
+button, .button, .btn, .shadcn-ui_button {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: background .2s, color .2s, box-shadow .2s;
+}
+
+.bg-muted { background: var(--muted); color: var(--muted-foreground); }
+.text-primary { color: var(--primary); }
+.bg-primary { background: var(--primary); }
+.text-destructive { color: var(--destructive); }
+.bg-destructive { background: var(--destructive); }
+.border { border-color: var(--border); }
+.rounded-xl, .rounded-lg { border-radius: var(--radius); }
+.shadow, .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl { box-shadow: 0 4px 24px 0 oklch(0.90 0 0 / 0.07); }
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+@keyframes gradient-slow {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+.animate-gradient-slow {
+  background-size: 200% 200%;
+  animation: gradient-slow 18s ease-in-out infinite;
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 0.6; transform: scale(1.08); }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 7s ease-in-out infinite;
+}
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(32px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+.animate-fadein {
+  animation: fadein 0.9s cubic-bezier(.46,.03,.52,.96) both;
+}
